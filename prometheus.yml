@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 10s
+
+scrape_configs:
+  - job_name: 'devops-backend'  
+    metrics_path: '/actuator/prometheus'  
+    static_configs:
+      - targets: ['192.168.157.133:8082']  
+
+  - job_name: 'jenkins'  
+    metrics_path: '/prometheus'  
+    static_configs:
+      - targets: ['192.168.157.133:8080']  
+
+  - job_name: 'ubuntu-machine'  
+    static_configs:
+      - targets: ['192.168.157.133:9100']  
+
+
